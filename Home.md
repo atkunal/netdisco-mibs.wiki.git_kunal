@@ -1,3 +1,3 @@
 Welcome to the netdisco-mibs wiki!
 
-We have a page on [building MIBs](Building MIBs).
+We have a page on [updating MIBs](Updating MIBs).
