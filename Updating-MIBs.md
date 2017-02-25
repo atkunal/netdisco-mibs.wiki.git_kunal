@@ -9,5 +9,14 @@ The STDOUT output is the one to compare between "starting point" and "end point"
 
 After that `snmptranslate` routine, run the `regen_indexes.pl` script, then the `mkindex` script, then the `chk_*` scripts. Fix issues, rinse, repeat.
 
+So something like...
+
+1. run snmptranslate -Tt and save STDOUT
+2. run snmptranslate -Tt inspecting errors (rinse, repeat....)
+3. run snmptranslate and compare to (1)
+4. run regen indexes to copy system indexes
+5. run mkindex to gather indexes
+6. run chk_dups
+7. run chk_mibs (should be error free?)
 
 
