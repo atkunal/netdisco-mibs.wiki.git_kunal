@@ -16,6 +16,7 @@
 
 ### regen_indexes
 * Copies .index files from the net-snmp PERSISTENT_DIR system cache back into local directories
+* Strips the DIR line that is added since net-snmp moved from dotfiles to persistent cache
 
 ## Discovery
 ### snmpwalkmib
