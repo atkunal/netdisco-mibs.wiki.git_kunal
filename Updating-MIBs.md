@@ -1,3 +1,16 @@
+# New Style
+
+1. restore index files: `mkindex`
+1. untar your new mib bundle to e.g. /tmp/vendorname
+1. check the mibs and follow suggestions: `mibcheck /tmp/vendorname`
+1. import the new mibs: `importmibs /tmp/vendorname`
+1. update indexes: `mkcache && mkindex`
+1. test load new mibs: `testmibs vendorname`
+1. run snmptranslate across all mibs and deal with errors: `genxlate all`
+1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
+1. done! `git commit ...`
+
+# Old Style
 * Having indexes helps with verifying the MIB collection using the old `chk_*` scripts from Max
 * Always run `snmptranslate -Tt` on the whole collection before changing anything, and closely inspect the diffs
 * Do a lot of intermediate `snmptranslate` sequences as well, to spot errors or incompatible MIB updates
