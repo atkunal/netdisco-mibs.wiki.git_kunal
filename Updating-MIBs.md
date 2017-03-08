@@ -18,7 +18,7 @@
 1. test load new mibs: `testmibs vendorname`
 
  _Deal with any errors reported in the output. Eventually it should be silent._
-1. run snmptranslate across all mibs: `genxlate all`
+1. run snmptranslate across all mibs: `genxlate`
 
  _Deal with any errors reported in the output. Eventually it should be silent._
 1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
