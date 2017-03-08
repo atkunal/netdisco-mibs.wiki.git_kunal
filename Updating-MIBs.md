@@ -1,7 +1,7 @@
 # New Style (draft)
 
 1. update indexes: `mkindex`
-1. untar your new mib bundle to e.g. /tmp/vendorname
+1. untar your new mib bundle to e.g. `/tmp/vendorname`
 1. import the new mibs: `importmibs /tmp/vendorname`
 1. update indexes: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
