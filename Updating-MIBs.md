@@ -5,6 +5,7 @@
 1. import the new mibs: `importmibs /tmp/vendorname`
 1. update indexes: `mkindex`
 1. test load new mibs: `testmibs vendorname`
+1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
 1. run snmptranslate across all mibs: `genxlate all`
 1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
 1. done! `git commit ...`
