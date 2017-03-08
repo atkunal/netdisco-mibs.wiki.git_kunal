@@ -4,17 +4,17 @@
 1. untar your new mib bundle to e.g. `/tmp/vendorname`
 1. import the new mibs: `importmibs /tmp/vendorname`
 
- The script will report various issues, such as:
- * files that are not MIBs (and will not be imported)
- * files that contain MIBs owned by another vendor
- * MIBs that are the same or older releases as existing ones
+ _The script will report various issues, such as:_
+ * _files that are not MIBs (and will not be imported)_
+ * _files that contain MIBs owned by another vendor_
+ * _MIBs that are the same or older releases as existing ones_
 
- You'll need to fix some issues before continuing.
+ _You'll need to fix issues marked with "✘" before continuing. Re-run the import until this is the case._
 
 1. update indexes: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
 
- Takes a few minutes but is only done once (but still run setmaxtc every time).
+ _Run this every time. It will be slow on the first run, while building the apps._
 1. test load new mibs: `testmibs vendorname`
 
  Deal with any errors reported in the output.
