@@ -17,8 +17,10 @@
  _Run this every time. It will be slow on the first run, while building the apps._
 1. test load new mibs: `testmibs vendorname`
 
- Deal with any errors reported in the output.
+ _Deal with any errors reported in the output. Eventually it should be silent._
 1. run snmptranslate across all mibs: `genxlate all`
+
+ _Deal with any errors reported in the output. Eventually it should be silent._
 1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
 1. done! `git commit ...`
 
