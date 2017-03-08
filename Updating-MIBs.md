@@ -9,7 +9,7 @@
  * _files that contain MIBs owned by another vendor_
  * _MIBs that are the same or older releases as existing ones_
 
- _You'll need to fix issues marked with "✘" before continuing. Re-run the import until this is the case._
+ _You'll need to fix issues marked with "✘" before continuing._
 
 1. update indexes: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
@@ -17,11 +17,13 @@
  _Run this every time. It will be slow on the first run, while building the apps._
 1. test load new mibs: `testmibs vendorname`
 
- _Deal with any errors reported in the output. Eventually it should be silent._
+ _Re-run until there are no errors reported in the output._
 1. run snmptranslate across all mibs: `genxlate`
 
- _Deal with any errors reported in the output. Eventually it should be silent._
+ _Re-run until there are no errors reported in the output._
 1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
+
+ _Sanity check that new entries are what you were expecting._
 1. done! `git commit ...`
 
 # Old Style
