@@ -8,6 +8,7 @@
  * files that are not MIBs (and will not be imported)
  * files that contain MIBs owned by another vendor
  * MIBs that are the same or older releases as existing ones
+
  You'll need to fix some issues before continuing.
 
 1. update indexes: `mkindex`
