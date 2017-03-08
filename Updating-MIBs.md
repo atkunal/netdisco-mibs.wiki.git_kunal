@@ -3,9 +3,20 @@
 1. update indexes: `mkindex`
 1. untar your new mib bundle to e.g. `/tmp/vendorname`
 1. import the new mibs: `importmibs /tmp/vendorname`
+
+ The script will report various issues, such as:
+ * files that are not MIBs (and will not be imported)
+ * files that contain MIBs owned by another vendor
+ * MIBs that are the same or older releases as existing ones
+ You'll need to fix some issues before continuing.
+
 1. update indexes: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
+
+ Takes a few minutes but is only done once (but still run setmaxtc every time).
 1. test load new mibs: `testmibs vendorname`
+
+ Deal with any errors reported in the output.
 1. run snmptranslate across all mibs: `genxlate all`
 1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
 1. done! `git commit ...`
