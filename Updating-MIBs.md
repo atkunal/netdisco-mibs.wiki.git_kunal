@@ -26,6 +26,11 @@
  _Sanity check that new entries are what you were expecting._
 1. done! `git commit ...`
 
+Some git tips:
+* On MacOS: `git config --global core.autocrlf input`
+* `git diff --shortstat`
+* `git diff -B -w -b`
+
 # Old Style
 * Having indexes helps with verifying the MIB collection using the old `chk_*` scripts from Max
 * Always run `snmptranslate -Tt` on the whole collection before changing anything, and closely inspect the diffs
