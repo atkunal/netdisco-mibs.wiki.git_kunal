@@ -2,7 +2,7 @@
 
 1. update indexes: `mkindex`
 1. untar your new mib bundle to e.g. `/tmp/vendorname`
-1. import the new mibs: `importmibs /tmp/vendorname`
+1. prepare the MIBs for import: `prepmibs /tmp/vendorname`
 
  _The script will report various issues, such as:_
  * _files that are not MIBs (and will not be imported)_
@@ -11,6 +11,7 @@
 
  _You'll need to fix issues marked with "✘" before continuing._
 
+1. import the MIBs: `importmibs /tmp/vendorname`
 1. update indexes again: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
 
