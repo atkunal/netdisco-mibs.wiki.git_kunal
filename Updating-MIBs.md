@@ -4,30 +4,30 @@
 1. untar your new mib bundle to e.g. `/tmp/vendorname`
 1. prepare the MIBs for import: `prepmibs /tmp/vendorname`
 
-* _The script will rename and organise files to help you._
-* _Any items marked "✘" need manually inspecting and will be in the "error" folder._
-* _Take a look at items marked "⚠" in the "ignore" folder, just in case._
-* _MIBs belonging to other vendors will be moved to "other" folder._
-* _Run "prepmibs/importmibs" on each folder in "other" before continuing._
+    * _The script will rename and organise files to help you._
+    * _Any items marked "✘" need manually inspecting and will be in the "error" folder._
+    * _Take a look at items marked "⚠" in the "ignore" folder, just in case._
+    * _MIBs belonging to other vendors will be moved to "other" folder._
+    * _Run "prepmibs/importmibs" on each folder in "other" before continuing._
 
 1. import the MIBs: `importmibs /tmp/vendorname`
 1. update indexes again: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
 
-* _Run this every time. It will only be slow the first time, building the apps._
+    * _Run this every time. It will only be slow the first time, building the apps._
 
 1. test load new mibs: `testmibs vendorname`
 
-* _Re-run until there are no errors reported in the output._
-* _Remember to run this for each "other" vendor that you also imported._
+    * _Re-run until there are no errors reported in the output._
+    * _Remember to run this for each "other" vendor that you also imported._
 
 1. run snmptranslate across all mibs: `genxlate`
 
-* _Re-run until there are no errors reported in the output._
+    * _Re-run until there are no errors reported in the output._
 
 1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
 
-* _Sanity check that new entries are what you were expecting._
+    * _Sanity check that new entries are what you were expecting._
 
 1. done! `git commit ...`
 
