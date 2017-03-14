@@ -7,6 +7,7 @@
     * _The script will rename and organise files to help you._
     * _Any items marked "✘" need manually inspecting and will be in the "error" folder._
     * _Take a look at items marked "⚠" in the "ignore" folder, just in case._
+    * _Watch out for new entries that could be RFCs._
     * _MIBs belonging to other vendors will be moved to "other" folder._
     * _Run "prepmibs/importmibs" on each folder in "other" before continuing._
 
