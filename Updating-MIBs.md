@@ -9,7 +9,7 @@
     * _Take a look at items marked "⚠" in the "ignore" folder, just in case._
     * _Watch out for new entries that could be RFCs._
     * _MIBs belonging to other vendors will be moved to "other" folder._
-    * _Run "prepmibs/importmibs" on each folder in "other" before continuing._
+    * _Run "prepmibs+importmibs" on each folder in "other" before continuing._
 
 1. import the MIBs: `importmibs /tmp/vendorname`
 1. update indexes again: `mkindex`
