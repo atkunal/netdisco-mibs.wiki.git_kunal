@@ -3,16 +3,11 @@
 
 > _Run everything from a git clone, setting `MIBHOME` environment variable to that location._
 
-### mkcache
-* Triggers net-snmp to build its index (in a temporary location)
-* Caches those indexes in a portable way (removing your system's directories)
-* You would not normally need to run this
-* _Changes files in the git repo_
-
 ### mkindex
-* Restores a net-snmp index cache
-* Rewrites index files to be useable by net-snmp (referencing your `MIBHOME`)
-* Always runs `mkcache` before restoring the cache
+* Triggers net-snmp to build index files for netdisco-mibs (in a temporary location)
+* Caches those indexes in a portable way (removing your system's directories)
+* Writes `mib_index2.txt` file containing all vendor MIBs and their files
+* _Changes files in the git repo_
 
 ### prepmibs
 * Organises files in new_mibs_dir (presumably a messy vendor bundle) in preparation for import
