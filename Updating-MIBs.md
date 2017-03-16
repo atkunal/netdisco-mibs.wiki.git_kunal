@@ -38,7 +38,7 @@
 
 1. done! `git commit ...`
 
-Some git tips:
+# Some git tips
 * On MacOS: `git config --global core.autocrlf input`
 * `git diff --shortstat`
 * `git diff -B -w -b`
