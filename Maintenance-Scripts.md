@@ -7,6 +7,7 @@
 * Triggers net-snmp to build its index (in a temporary location)
 * Caches those indexes in a portable way (removing your system's directories)
 * You would not normally need to run this
+* _Changes files in the git repo_
 
 ### mkindex
 * Restores a net-snmp index cache
@@ -27,6 +28,7 @@
 * Copies files from new_mibs_dir to the vendor's folder in netdisco-mibs
 * Assumes that prepmibs has been run, so only new and newer MIBs are in new_mibs_dir
 * Refuses to run if the "error" subfolder has anything in it
+* _Changes files in the git repo_
 
 ### setmaxtc
 * Builds the net-snmp applications with an amended `MAXTC` so that all MIBs can be loaded at once
@@ -38,6 +40,7 @@
 ### genxlate
 * Run `snmptranslate` on all MIBs in netdisco-mibs (at once), report errors
 * A tree form of the loaded MIBs and their content (`-Tt`) is saved to `MIBHOME/extras/reports/all`
+* _Changes files in the git repo_
 
 ### compare
 * Given any MIB file, runs a diff against the equivalent MIB in netdisco-mibs
