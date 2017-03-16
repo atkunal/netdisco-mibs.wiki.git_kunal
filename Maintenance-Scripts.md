@@ -68,8 +68,8 @@
 ### walk_all
 * Runs snmpwalkmib on all MIBs mentioned in a mib_index.txt or .index file
 
-# Utilities
-### diff_dir
+# Utilities
+### diff_dir
 * Compares two directories and makes sure one contains the newest (or only) versions of all files 
 
 ### to_locase
