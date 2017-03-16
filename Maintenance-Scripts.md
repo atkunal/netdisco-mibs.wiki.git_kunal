@@ -34,7 +34,7 @@
 
 ## genxlate
 * Run `snmptranslate` on all MIBs in netdisco-mibs (at once), report errors
-* A tree form of the loaded MIBs and their content (`-Tt`) is saved to `MIBHOME/extras/reports/all`
+* A tree-form report of the loaded MIBs and their content (`-Tt`) is saved to `MIBHOME/extras/reports/all`
 * _Changes files in the git repo_
 
 ## compare
