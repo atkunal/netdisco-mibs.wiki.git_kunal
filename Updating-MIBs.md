@@ -17,7 +17,7 @@
     * _Run `prepmibs` (& import...) on each folder in "other" if those dependencies are required._
 
 1. import the MIBs: `importmibs /tmp/vendorname`
-1. update indexes again: `mkindex`
+1. rebuild indexes to refer to new MIBs: `mkindex`
 1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
 
     * _Run this every time. It will only be slow the first time, building the apps._
