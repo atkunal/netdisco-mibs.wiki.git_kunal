@@ -22,7 +22,7 @@
 
     * _Run this every time. It will only be slow the first time, building the apps._
 
-1. test load new mibs: `testmibs vendorname`
+1. test load new mibs: `testload vendorname`
 
     * _Re-run until there are no errors reported in the output._
     * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
