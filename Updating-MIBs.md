@@ -25,6 +25,7 @@
 1. test load new mibs: `testmibs vendorname`
 
     * _Re-run until there are no errors reported in the output._
+    * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
     * _Remember to run this for each "other" vendor that you also imported._
 
 1. run snmptranslate across all mibs: `genxlate`
