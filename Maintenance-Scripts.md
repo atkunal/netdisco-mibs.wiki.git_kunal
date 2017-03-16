@@ -1,4 +1,48 @@
-## General
+## New Style
+> _These are listed roughly in the order that you'd run them in a standard workflow._
+
+> _Run everything from a git clone, setting `MIBHOME` environment variable to that location._
+
+### mkcache
+* Triggers net-snmp to build its index (in a temporary location)
+* Caches those indexes in a portable way (removing your system's directories)
+* You would not normally need to run this
+
+### mkindex
+* Restores a net-snmp index cache
+* Rewrites index files to be useable by net-snmp (referencing your `MIBHOME`)
+* Always runs `mkcache` before restoring the cache
+
+### prepmibs
+* Organises files in new_mibs_dir (presumably a messy vendor bundle) in preparation for import
+* Renames any known MIB file to be the same as its equivalent in netdisco-mibs 
+* Prints a friendly report telling you about all actions taken:
+  * Files that don't look like MIBs (to net-snmp) are moved to the "ignore" subfolder
+  * Files that seem to have issues are moved to the "error" subfolder
+  * MIBs belonging to other vendors are moved to "other/vendorname" subfolder(s)
+  * MIBs older than their equivalent in netdisco-mibs are moved to the "older" subfolder
+  * MIBs the same age as in netdisco-mibs are moved to the "same" subfolder
+
+### importmibs
+* Copies files from new_mibs_dir to the vendor's folder in netdisco-mibs
+* Assumes that prepmibs has been run, so only new and newer MIBs are in new_mibs_dir
+* Refuses to run if the "error" subfolder has anything in it
+
+### setmaxtc
+* Builds the net-snmp applications with an amended `MAXTC` so that all MIBs can be loaded at once
+* Spawns your shell with `PATH` adjusted to use these applications (`exit` to quit the shell)
+
+### testload
+* Run `snmptranslate` on each MIB in a vendor's folder (individually), report errors
+
+### genxlate
+* Run `snmptranslate` on all MIBs in netdisco-mibs (at once), report errors
+* A tree form of the loaded MIBs and their content (`-Tt`) is saved to `MIBHOME/extras/reports/all`
+
+### compare
+* Given any MIB file, runs a diff against the equivalent MIB in netdisco-mibs
+
+## Old Style (general)
 ### chk_dups
 * Reports if any two files are defining the same MIB. Shows a diff and LAST-UPDATED, if they are
 * Needs a mib_index.txt file containing .index from all directories in the bundle
