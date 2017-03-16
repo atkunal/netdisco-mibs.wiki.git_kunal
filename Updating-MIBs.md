@@ -1,5 +1,9 @@
 # New Style (draft)
 
+1. Set git to translate line endings:
+
+    * `git config --global core.autocrlf input`
+
 1. update indexes: `mkindex`
 1. untar your new mib bundle to e.g. `/tmp/vendorname`
 1. prepare the MIBs for import: `prepmibs /tmp/vendorname`
@@ -9,7 +13,8 @@
     * _Take a look at items marked "⚠" in the "ignore" folder, just in case._
     * _Watch out for new entries that could be RFCs._
     * _MIBs belonging to other vendors will be moved to "other" folder._
-    * _Run "prepmibs+importmibs" on each folder in "other" before continuing._
+    * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
+    * _Run `prepmibs` (& import...) on each folder in "other" before continuing._
 
 1. import the MIBs: `importmibs /tmp/vendorname`
 1. update indexes again: `mkindex`
