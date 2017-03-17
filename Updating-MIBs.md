@@ -6,7 +6,7 @@
 
 1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location.
 1. untar your new mib bundle to e.g. `/tmp/vendorname`
-1. update indexes: `mkindex`
+1. update indexes: [`netdisco-mibs/extras/scripts/`]`mkindex`
 1. prepare the MIBs for import: `prepmibs /tmp/vendorname`
 
     * _The script will rename and organise files to help you._
