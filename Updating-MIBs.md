@@ -37,6 +37,7 @@
 
     * _Sanity check that new entries are what you were expecting._
 
+1. add new vendors to `extras/contrib/snmp.conf`
 1. done! `git commit ...`
 
 # Some git tips
