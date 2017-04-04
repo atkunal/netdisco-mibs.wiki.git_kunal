@@ -43,7 +43,8 @@
 # Some git tips
 * On MacOS: `git config --global core.autocrlf input`
 * `git diff --shortstat`
-* `git diff -B -w -b`
+
+Check out a Github pull request into a branch using the commands in [this gist](https://gist.github.com/ollyg/9db70a621d0638b491354e39e5b27bf1).
 
 # Old Style
 * Having indexes helps with verifying the MIB collection using the old `chk_*` scripts from Max
