@@ -41,8 +41,9 @@
 1. done! `git commit ...`
 
 # Some git tips
-* On MacOS: `git config --global core.autocrlf input`
-* `git diff --shortstat`
+* On MacOS and Linux: `git config --global core.autocrlf input`
+* Always push new tags with commits: `git config --global push.followTags true`
+* Short diff summary: `git diff --shortstat`
 
 Check out a Github pull request into a branch using the commands in [this gist](https://gist.github.com/ollyg/9db70a621d0638b491354e39e5b27bf1).
 
