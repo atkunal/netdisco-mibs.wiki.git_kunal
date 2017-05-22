@@ -6,7 +6,7 @@
 
 1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location.
 1. untar your new mib bundle to e.g. `/tmp/vendorname` (vendor name must be used)
-1. update indexes: [`netdisco-mibs/extras/scripts/`]`mkindex`
+1. update indexes: [`netdisco-mibs/EXTRAS/scripts/`]`mkindex`
 1. prepare the MIBs for import: `prepmibs /tmp/vendorname`
 
     * _The script will rename and organise files to help you._
@@ -33,11 +33,11 @@
 
     * _Re-run until there are no errors reported in the output._
 
-1. inspect snmptranslate diffs: `git diff netdisco-mibs/extras/reports/all`
+1. inspect snmptranslate diffs: `git diff netdisco-mibs/EXTRAS/reports/all`
 
     * _Sanity check that new entries are what you were expecting._
 
-1. add new vendors to `extras/contrib/snmp.conf`
+1. add new vendors to `EXTRAS/contrib/snmp.conf`
 1. done! `git commit ...`
 
 # Some git tips
