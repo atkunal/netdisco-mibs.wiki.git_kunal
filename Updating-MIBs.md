@@ -10,12 +10,12 @@
 1. `cd $MIBHOME`
 1. Create a new branch for your work: `git checkout -b initials-vendorname-description` (your initials, the vendor, a description)
 1. If necessary, `mkdir vendorname` (if the vendor is new)
-1. bootstrap net-snmp with sufficient MAXTC: `EXTRAS/scripts/setmaxtc`
+1. Bootstrap net-snmp with sufficient MAXTC: `EXTRAS/scripts/setmaxtc`
 
     * _Run this **every** time. It will only be slow once, when building the apps._
 
-1. update indexes: `EXTRAS/scripts/mkindex`
-1. prepare the MIBs for import: `EXTRAS/scripts/prepmibs /tmp/vendorname`
+1. Update indexes: `EXTRAS/scripts/mkindex`
+1. Prepare the MIBs for import: `EXTRAS/scripts/prepmibs /tmp/vendorname`
 
     * _The script will rename and organise files to help you._
     * _Any items marked "✘" need manually inspecting and will be in the "error" folder._
@@ -25,24 +25,25 @@
     * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
     * _Run `prepmibs` (& import...) on each folder in "other" if those dependencies are required._
 
-1. import the MIBs: `EXTRAS/scripts/importmibs /tmp/vendorname`
-1. rebuild indexes to refer to new MIBs: `EXTRAS/scripts/mkindex`
-1. test load new mibs: `EXTRAS/scripts/testload vendorname`
+1. Import the MIBs: `EXTRAS/scripts/importmibs /tmp/vendorname`
+1. Rebuild indexes to refer to new MIBs: `EXTRAS/scripts/mkindex`
+1. Test load new mibs: `EXTRAS/scripts/testload vendorname`
 
     * _Re-run until there are no errors reported in the output._
     * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
     * _Also run this for each "other" vendor that you also imported._
 
-1. run snmptranslate across all mibs: `EXTRAS/scripts/genxlate`
+1. Run snmptranslate across all mibs: `EXTRAS/scripts/genxlate`
 
     * _Re-run until there are no errors reported in the output._
 
-1. inspect snmptranslate diffs: `git diff EXTRAS/reports/all`
+1. Inspect snmptranslate diffs: `git diff EXTRAS/reports/all`
 
     * _Sanity check that new entries are what you were expecting._
 
-1. add new vendors to `EXTRAS/contrib/snmp.conf`
-1. done! `git commit ... && git push ...`
+1. If necessary, add new vendors to `EXTRAS/contrib/snmp.conf`
+1. `git commit -a -m "a good comment"`
+1. `git push`
 
 # Some git tips
 * On MacOS and Linux: `git config --global core.autocrlf input`
