@@ -10,7 +10,7 @@
 1. `cd $MIBHOME`
 1. Create a new branch for your work: `git checkout -b initials-vendorname-description` (your initials, the vendor, a description)
 1. If necessary, `mkdir vendorname` (if the vendor is new)
-1. Bootstrap net-snmp with sufficient MAXTC: `EXTRAS/scripts/setmaxtc`
+1. Bootstrap net-snmp with custom configuration: `EXTRAS/scripts/setmaxtc`
 
     * _Run this **every** time. It will only be slow once, when building the apps._
 
@@ -44,6 +44,7 @@
 1. If necessary, add new vendors to `EXTRAS/contrib/snmp.conf`
 1. `git commit -a -m "a good comment"`
 1. `git push`
+1. Return to using your primary net-snmp environment: `exit`
 
 # Some git tips
 * On MacOS and Linux: `git config --global core.autocrlf input`
