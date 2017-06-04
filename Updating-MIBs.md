@@ -6,9 +6,9 @@
     * `git config --global push.default current` (push and track new branches)
 
 1. Unzip your new MIB bundle to e.g. `/tmp/vendorname` (vendorname must exist in netdisco-mibs or be new)
-1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location.
+1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location on your computer.
 1. `cd $MIBHOME`
-1. `git checkout -b initials-vendorname-description` (your initials, the vendor, a description)
+1. Create a new branch for your work: `git checkout -b initials-vendorname-description` (your initials, the vendor, a description)
 1. If necessary, `mkdir vendorname` (if the vendor is new)
 1. bootstrap net-snmp with sufficient MAXTC: `EXTRAS/scripts/setmaxtc`
 
