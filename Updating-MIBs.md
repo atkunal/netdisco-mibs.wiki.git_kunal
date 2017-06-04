@@ -2,8 +2,8 @@
 
 1. Configure git to help you develop netdisco-mibs:
 
-    * `git config --global core.autocrlf input`  (automatically translate file line endings)
-    * `git config --global push.default current` (push branch to same name, and automatically track)
+    * `git config --global core.autocrlf input`
+    * `git config --global push.default current`
 
 1. Unzip your new MIB bundle to e.g. `/tmp/vendorname` (vendor name must exist in netdisco-mibs or be new)
 1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location.
