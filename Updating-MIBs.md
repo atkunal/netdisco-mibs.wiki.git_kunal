@@ -1,11 +1,11 @@
-# New Style (draft)
+# The Process
 
 1. Configure git to help you develop netdisco-mibs:
 
     * `git config --global core.autocrlf input`
     * `git config --global push.default current`
 
-1. Unzip your new MIB bundle to e.g. `/tmp/vendorname`
+1. Unzip your new MIB bundle to e.g. `/tmp/vendorname` (vendorname must exist in netdisco-mibs or be new)
 1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location.
 1. `cd $MIBHOME`
 1. `git checkout -b initials-vendorname-description` (your initials, the vendor, a description)
