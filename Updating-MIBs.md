@@ -1,13 +1,21 @@
 # New Style (draft)
 
-1. Set git to translate line endings:
+1. Configure git to help you develop netdisco-mibs:
 
-    * `git config --global core.autocrlf input`
+    * `git config --global core.autocrlf input`  (automatically translate file line endings)
+    * `git config --global push.default current` (push branch to same name, and automatically track)
 
+1. Unzip your new MIB bundle to e.g. `/tmp/vendorname` (vendor name must exist in netdisco-mibs or be new)
 1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location.
-1. untar your new mib bundle to e.g. `/tmp/vendorname` (vendor name must be used)
-1. update indexes: [`netdisco-mibs/EXTRAS/scripts/`]`mkindex`
-1. prepare the MIBs for import: `prepmibs /tmp/vendorname`
+1. `cd $MIBHOME`
+1. `git checkout -b initials-vendorname-description` (your initials, the vendor, a description)
+1. If necessary, `mkdir vendorname` (if the vendor is new)
+1. bootstrap net-snmp with sufficient MAXTC: `EXTRAS/scripts/setmaxtc`
+
+    * _Run this **every** time. It will only be slow once, when building the apps._
+
+1. update indexes: `EXTRAS/scripts/mkindex`
+1. prepare the MIBs for import: `EXTRAS/scripts/prepmibs /tmp/vendorname`
 
     * _The script will rename and organise files to help you._
     * _Any items marked "✘" need manually inspecting and will be in the "error" folder._
@@ -17,28 +25,24 @@
     * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
     * _Run `prepmibs` (& import...) on each folder in "other" if those dependencies are required._
 
-1. import the MIBs: `importmibs /tmp/vendorname`
-1. rebuild indexes to refer to new MIBs: `mkindex`
-1. bootstrap net-snmp with sufficient MAXTC: `setmaxtc`
-
-    * _Run this every time. It will only be slow the first time, building the apps._
-
-1. test load new mibs: `testload vendorname`
+1. import the MIBs: `EXTRAS/scripts/importmibs /tmp/vendorname`
+1. rebuild indexes to refer to new MIBs: `EXTRAS/scripts/mkindex`
+1. test load new mibs: `EXTRAS/scripts/testload vendorname`
 
     * _Re-run until there are no errors reported in the output._
     * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
-    * _Remember to run this for each "other" vendor that you also imported._
+    * _Also run this for each "other" vendor that you also imported._
 
-1. run snmptranslate across all mibs: `genxlate`
+1. run snmptranslate across all mibs: `EXTRAS/scripts/genxlate`
 
     * _Re-run until there are no errors reported in the output._
 
-1. inspect snmptranslate diffs: `git diff netdisco-mibs/EXTRAS/reports/all`
+1. inspect snmptranslate diffs: `git diff EXTRAS/reports/all`
 
     * _Sanity check that new entries are what you were expecting._
 
 1. add new vendors to `EXTRAS/contrib/snmp.conf`
-1. done! `git commit ...`
+1. done! `git commit ... && git push ...`
 
 # Some git tips
 * On MacOS and Linux: `git config --global core.autocrlf input`
