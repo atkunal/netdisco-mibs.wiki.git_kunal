@@ -22,7 +22,7 @@
     * _Take a look at items marked "⚠" in the "ignore" folder, just in case._
     * _Watch out for new entries that could be RFCs._
     * _MIBs belonging to other vendors will be moved to "other" folder._
-    * _The `compare` script can be run on a MIB file to diff it with the netdisco-mibs version._
+    * _Use `compare <mibfile>` on a MIB file to diff it against the netdisco-mibs version._
     * _Run `prepmibs` (& import...) on each folder in "other" if those dependencies are required._
 
 1. Import the MIBs: `EXTRAS/scripts/importmibs /tmp/vendorname`
