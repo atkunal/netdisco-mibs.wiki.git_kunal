@@ -42,7 +42,7 @@
     * _Sanity check that new entries are what you were expecting._
 
 1. If necessary, add new vendors to `EXTRAS/contrib/snmp.conf`
-1. `git commit -a -m "a good comment"`
+1. `git add . && git commit -m "a good comment"`
 1. `git push`
 1. Return to using your primary net-snmp environment: `exit`
 
