@@ -28,7 +28,7 @@
 1. Test load new mibs: `EXTRAS/scripts/testload vendorname`
 
     * _Re-run until there are no errors reported in the output._
-    * _Use `compare <mibfile>` on a MIB file to diff it against the netdisco-mibs version._
+    * _Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version._
     * _Also run this for each "other" vendor that you also imported._
 
 1. Run snmptranslate across all mibs: `EXTRAS/scripts/genxlate`
