@@ -16,12 +16,12 @@
 1. Prepare the MIBs for import: `EXTRAS/scripts/prepmibs /tmp/vendorname`
 
     * _The script will rename and organise files to help you._
-    * _Any items marked "✘" need manually inspecting and will be in the "error" folder._
-    * _Take a look at items marked "⚠" in the "ignore" folder, just in case._
-    * _Watch out for new entries that could be RFCs._
-    * _MIBs belonging to other vendors will be moved to "other" folder._
+    * _Items marked "✘" need manually inspecting and will be in the "error" folder._
+    * _Items marked "⚠" will be put in the "ignore" folder and skipped._
+    * _MIBs belonging to other vendors will be moved to the "other" folder._
+    * _MIBs in "other" may be dependencies. If so, run `prepmibs`+`import` on them._
     * _Use `compare <mibfile>` on a MIB file to diff it against the netdisco-mibs version._
-    * _Run `prepmibs` (& import...) on each folder in "other" if those dependencies are required._
+    * _Watch out for new entries that could be bundled RFCs!_
 
 1. Import the MIBs: `EXTRAS/scripts/importmibs /tmp/vendorname`
 1. Rebuild indexes to refer to new MIBs: `EXTRAS/scripts/mkindex`
