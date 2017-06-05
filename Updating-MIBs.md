@@ -1,5 +1,3 @@
-# The Process
-
 1. Configure git to help you develop netdisco-mibs:
 
     * `git config --global core.autocrlf input` (fix MIB line endings)
