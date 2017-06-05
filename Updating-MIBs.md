@@ -19,8 +19,8 @@
     * _Items marked "✘" need manually inspecting and will be in the "error" folder._
     * _Items marked "⚠" will be put in the "ignore" folder and skipped._
     * _MIBs belonging to other vendors will be moved to the "other" folder._
-    * _MIBs in "other" may be dependencies. If so, run `prepmibs`+`import` on them._
-    * _Use `compare <mibfile>` on a MIB file to diff it against the netdisco-mibs version._
+    * _MIBs in "other" may be dependencies. If so, run `prepmibs`+`importmibs` on them._
+    * _Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version._
     * _Watch out for new entries that could be bundled RFCs!_
 
 1. Import the MIBs: `EXTRAS/scripts/importmibs /tmp/vendorname`
