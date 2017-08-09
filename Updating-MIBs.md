@@ -2,6 +2,7 @@
 
     * `git config --global core.autocrlf input` (fix MIB line endings)
     * `git config --global push.default current` (push and track new branches)
+    * `git config --global core.whitespace cr-at-eol` (git-diff will ignore windows line endings)
 
 1. Unzip your new MIB bundle to e.g. `/tmp/vendorname` (vendorname must exist in netdisco-mibs or be new)
 1. Assuming you have a `git clone` of the repo, set your `MIBHOME` environment variable to that location on your computer. `MIBHOME` must not include spaces or wide characters (emoji, etc).
