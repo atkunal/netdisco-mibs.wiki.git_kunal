@@ -37,8 +37,10 @@
 
     * _Re-run until there are no errors reported in the output._
 
-1. Inspect snmptranslate diffs: `git diff EXTRAS/reports/all`
+1. Inspect snmptranslate diffs:
 
+    * `git diff EXTRAS/reports/vendorname`
+    * `git diff EXTRAS/reports/all` (should look the same as the vendor diff)
     * _Sanity check that new entries are what you were expecting._
 
 1. If necessary, add new vendors to `EXTRAS/contrib/snmp.conf`
