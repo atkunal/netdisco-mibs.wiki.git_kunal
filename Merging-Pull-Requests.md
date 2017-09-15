@@ -27,7 +27,7 @@ However...
 
 1. then force push changes from your local branch back to the pull request at github (NN is the PR number):
 
-    `git push git://github.com/USERNAME/netdisco-mibs.git +pr/NN:BRANCHNAME`
+    `git push https://github.com/USERNAME/netdisco-mibs.git +pr/NN:BRANCHNAME`
 
 1. go to github and perform an automatic squash merge in the web interface
 1. delete the local PR branch:
