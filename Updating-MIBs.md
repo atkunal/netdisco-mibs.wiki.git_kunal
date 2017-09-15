@@ -33,7 +33,7 @@
     * _Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version._
     * _Also run this for each "other" vendor that you also imported._
 
-1. Run snmptranslate across all mibs: `EXTRAS/scripts/genxlate`
+1. Run snmptranslate across all mibs: `EXTRAS/scripts/genxlate vendorname`
 
     * _Re-run until there are no errors reported in the output._
 
