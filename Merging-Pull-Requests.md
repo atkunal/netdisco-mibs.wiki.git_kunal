@@ -14,6 +14,12 @@ Add the following lines to your user's `.gitconfig` (in your home area):
     `git pr 14`
 
 1. inspect the snmptranslate reports to make sure that only the intended vendor is updated (for example some vendors may impact others' namespaces)
+
+    `EXTRAS/scripts/mkindex`
+    `EXTRAS/scripts/prepmibs vendorname`
+    `EXTRAS/scripts/testload vendorname`
+    `EXTRAS/scripts/genxlate`
+
 1. if you're happy, go to github and perform an automatic squash merge in the web interface
 1. delete the local PR branch:
 
