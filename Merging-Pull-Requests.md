@@ -23,7 +23,7 @@ However...
 1. if you need to make changes, commit them to the local branch
 1. fetch the pull request's origin branch (the USERNAME and BRANCHNAME will be in the PR page on github):
 
-    `git fetch git://github.com/USERNAME/netdisco-mibs.git BRANCHNAME`
+    `git fetch https://github.com/USERNAME/netdisco-mibs.git BRANCHNAME`
 
 1. then force push changes from your local branch back to the pull request at github (NN is the PR number):
 
