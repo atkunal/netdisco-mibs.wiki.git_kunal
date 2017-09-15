@@ -18,7 +18,7 @@ Add the following lines to your user's `.gitconfig` (in your home area):
     * `EXTRAS/scripts/mkindex`
     * `EXTRAS/scripts/prepmibs vendorname`
     * `EXTRAS/scripts/testload vendorname`
-    * `EXTRAS/scripts/genxlate`
+    * `EXTRAS/scripts/genxlate vendorname`
     * `git diff master...`
 
 1. if you're happy, go to github and perform an automatic squash merge in the web interface
