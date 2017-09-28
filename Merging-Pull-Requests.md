@@ -24,7 +24,8 @@ Add the following lines to your user's `.gitconfig` (in your home area):
 1. if you're happy, go to github and perform an automatic squash merge in the web interface
 1. delete the local PR branch:
 
-    `git pr-clean`
+    * `git pr-clean`
+    * `git pull`
 
 However...
 1. if you need to make changes, commit them to the local branch
@@ -39,4 +40,5 @@ However...
 1. go to github and perform an automatic squash merge in the web interface
 1. delete the local PR branch:
 
-    `git pr-clean`
+    * `git pr-clean`
+    * `git pull`
