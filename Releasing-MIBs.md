@@ -18,8 +18,14 @@
     * `git push` (may need `--follow-tags` if you have an old version of git)
 
 1. Visit https://github.com/netdisco/netdisco-mibs/releases/new
-1. Select your new tag (X.Y) from the dropdown list.
+1. Select your new tag (X.Y) from the dropdown list
 1. Enter "netdisco-mibs-X.Y" for the Release Title
-1. Click the green "Publish Release" button.
+1. Click the green "Publish Release" button
+1. Visit https://github.com/netdisco/netdisco-mibs/releases/latest
+1. Download the `tar.gz` file
+1. Click "Edit release"
+1. Under "Attach binaries by dropping them..." click "select file" and upload the `tar.gz` file you just downloaded.
+1. When uploaded, change the name to be only `netdisco-mibs.tar.gz`
+1. Click "Update Release"
 
 Done!
