@@ -14,19 +14,19 @@ toc::[]
 
 == Configure Git
 
-You should decide whether you wish to work on our netdisco-mibs git repo
-directory, or fork and work on your own. Either is fine! Email the project
-mail list or as on IRC for netdisco-mibs repository access. You can read more
-about
+You should decide whether to work on the netdisco-mibs project's git
+repository directory, or fork it and work on your own. Either is fine! You can
+read more about
 https://help.github.com/articles/about-collaborative-development-models/[the different collaborative development models]
-if you're unsure.
+if you're unsure.  Email the project mail-list or ask on IRC for netdisco-mibs
+repository access.
 
 [source,shell,indent=0]
 ----
 git config --global core.autocrlf input // <1>
-git config --global push.default current // <1>
-git config --global core.whitespace cr-at-eol // <1>
-git clone https://github.com/netdisco/netdisco-mibs.git // <1>
+git config --global push.default current // <2>
+git config --global core.whitespace cr-at-eol // <3>
+git clone https://github.com/netdisco/netdisco-mibs.git // <4>
 ----
 <1> fix MIB line endings
 <2> push and track new branches
@@ -99,11 +99,17 @@ EXTRAS/scripts/prepmibs /tmp/vendorname // <1>
 same vendor name as used in netdisco-mibs
 
 TIP: The script will rename and organise files to help you.
+
 TIP: Items marked "✘" need manually inspecting and will be in the "error" folder.
+
 TIP: Items marked "⚠" will be put in the "ignore" folder and skipped.
+
 TIP: MIBs belonging to other vendors will be moved to the "other" folder.
+
 WARNING: MIBs in "other" may be dependencies. If so, run `prepmibs` & `importmibs` on them.
+
 TIP: Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version.
+
 WARNING: Watch out for new entries that could be bundled RFCs!
 
 == Import the MIBs
@@ -129,7 +135,9 @@ any loading errors, which you _must_ address before continuing.
 EXTRAS/scripts/testload vendorname
 
 CAUTION: Re-run until there are no errors reported in the output.
+
 TIP: Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version.
+
 IMPORTANT: Also run this for each "other" vendor that you also imported.
 
 == Update netdisco-mibs `snmptranslate` reports
@@ -147,7 +155,7 @@ have introduced or changed. Use `git diff` to review these changes:
 [source,shell,indent=0]
 ----
 git diff EXTRAS/reports/vendorname
-git diff EXTRAS/reports/all // <1>
+git diff EXTRAS/reports/all # <1>
 ----
 <1> should look the same as the vendor diff
 
@@ -168,7 +176,8 @@ Commit your code in git and then push to github. Notify the netdisco-mibs
 developers of your new branch or fork, or submit a pull request.
 
 [source,shell,indent=0]
-git add . && git commit -m "a good comment"
+git add .
+git commit -m "a good comment"
 git push
 
 If you are a registered developer, you can merge this branch and
