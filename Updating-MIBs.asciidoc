@@ -1,0 +1,176 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+
+:toc: macro
+:toc-title:
+:toclevels: 3
+
+toc::[]
+
+== Configure Git
+
+You should decide whether you wish to work on our netdisco-mibs git repo
+directory, or fork and work on your own. Either is fine! Email the project
+mail list or as on IRC for netdisco-mibs repository access. You can read more
+about
+https://help.github.com/articles/about-collaborative-development-models/[the different collaborative development models]
+if you're unsure.
+
+[source,shell,indent=0]
+----
+git config --global core.autocrlf input // <1>
+git config --global push.default current // <1>
+git config --global core.whitespace cr-at-eol // <1>
+git clone https://github.com/netdisco/netdisco-mibs.git // <1>
+----
+<1> fix MIB line endings
+<2> push and track new branches
+<3> make git-diff ignore windows line endings
+<4> replace Netdisco's netdisco-mibs if you wish
+
+Obviously, the git clone link should be your own fork, if that is what you
+have chosen.
+
+== Extract your MIBs
+
+Unzip the bundle to `/tmp/vendorname`, where "```vendorname```" is the same as
+the vendor in netdisco-mibs (or a new one).
+
+== Set MIBHOME
+
+Usually this is the directory of the git clone created above, such as:
+
+[source,shell,indent=0]
+export MIBHOME=/home/oliver/git/netdisco-mibs
+
+`MIBHOME` must not include spaces or wide characters (emoji, etc).
+
+== Create a branch for your work
+
+This is only necessary if you are work on the project's netdisco-mibs
+repository. If working on your own repository, skip this step (and work on the
+master branch).
+
+[source,shell,indent=0]
+----
+git checkout -b initials-vendorname-description // <1>
+----
+<1> your initials, the vendor, a description
+
+== Enter the netdisco-mibs workspace
+
+[source,shell,indent=0]
+----
+cd $MIBHOME
+mkdir vendorname // <1>
+----
+<1> only if the vendor is new
+
+== Bootstrap a net-snmp commandline toolset
+
+Run this *every* time. It will only be slow once, when first building the
+apps.
+
+[source,shell,indent=0]
+EXTRAS/scripts/setmaxtc
+
+== Update MIB indexes
+
+[source,shell,indent=0]
+EXTRAS/scripts/mkindex
+
+== Scan and prepare your new MIBs for import
+
+This is a script that looks through your new MIB bundle and tries to sort out
+the different types of files we see, identify and flag issues which you need
+to address, and let you know when things are ready for import to
+netdisco-mibs.
+
+[source,shell,indent=0]
+----
+EXTRAS/scripts/prepmibs /tmp/vendorname // <1>
+----
+<1> the directory where you unzipped your new MIB bundle, with of course the
+same vendor name as used in netdisco-mibs
+
+TIP: The script will rename and organise files to help you.
+TIP: Items marked "✘" need manually inspecting and will be in the "error" folder.
+TIP: Items marked "⚠" will be put in the "ignore" folder and skipped.
+TIP: MIBs belonging to other vendors will be moved to the "other" folder.
+WARNING: MIBs in "other" may be dependencies. If so, run `prepmibs` & `importmibs` on them.
+TIP: Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version.
+WARNING: Watch out for new entries that could be bundled RFCs!
+
+== Import the MIBs
+
+Once you are happy with the output of `prepmibs`, you can import the MIBs to
+netdisco-mibs. The script is quite dumb and assumes you have been diligent and
+read the output of `prepmibs`.
+
+[source,shell,indent=0]
+EXTRAS/scripts/importmibs /tmp/vendorname
+
+== Rebuild MIB indexes
+
+[source,shell,indent=0]
+EXTRAS/scripts/mkindex
+
+== Test the new MIBs
+
+This script will load the vendor's MIBs in turn using net-snmp. It will report
+any loading errors, which you _must_ address before continuing.
+
+[source,shell,indent=0]
+EXTRAS/scripts/testload vendorname
+
+CAUTION: Re-run until there are no errors reported in the output.
+TIP: Use `compare <mibfile>` to diff a MIB file against the netdisco-mibs version.
+IMPORTANT: Also run this for each "other" vendor that you also imported.
+
+== Update netdisco-mibs `snmptranslate` reports
+
+This script parses all MIBs and stores a translation report for all OIDs.
+
+[source,shell,indent=0]
+EXTRAS/scripts/genxlate
+
+CAUTION: Re-run until there are no errors reported in the output.
+
+The `genxlate` output is a set of reports that clearly show what the new MIBs
+have introduced or changed. Use `git diff` to review these changes:
+
+[source,shell,indent=0]
+----
+git diff EXTRAS/reports/vendorname
+git diff EXTRAS/reports/all // <1>
+----
+<1> should look the same as the vendor diff
+
+CAUTION: Sanity check that new entries are what you were expecting.
+
+== Add new vendor to template `snmp.conf`
+
+Only if necessary, edit `EXTRAS/contrib/snmp.conf` to add the new vendor.
+
+== Return your Shell Environment
+
+When you ran `setmaxtc` (above), it created a new shell environment. Return to
+your previous shell environment by running the `exit` command.
+
+== Commit changes and submit for review
+
+Commit your code in git and then push to github. Notify the netdisco-mibs
+developers of your new branch or fork, or submit a pull request.
+
+[source,shell,indent=0]
+git add . && git commit -m "a good comment"
+git push
+
+If you are a registered developer, you can merge this branch and
+https://github.com/netdisco/netdisco-mibs/wiki/Releasing-MIBs[publish a new
+release].
