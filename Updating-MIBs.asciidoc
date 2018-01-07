@@ -30,8 +30,11 @@ git config --global core.whitespace cr-at-eol 3️⃣
 git clone https://github.com/netdisco/netdisco-mibs.git 4️⃣
 ----
 1️⃣ fix MIB line endings
+
 2️⃣ push and track new branches
+
 3️⃣ make git-diff ignore windows line endings
+
 4️⃣ replace Netdisco's netdisco-mibs if you wish
 
 Obviously, the git clone link should be your own fork, if that is what you
@@ -68,7 +71,7 @@ git checkout -b initials-vendorname-description 1️⃣
 [source,shell,indent=0]
 ----
 cd $MIBHOME
-mkdir vendorname // 1️⃣
+mkdir vendorname 1️⃣
 ----
 1️⃣ only if the vendor is new
 
