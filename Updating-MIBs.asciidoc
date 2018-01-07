@@ -11,6 +11,7 @@ endif::[]
 :toclevels: 3
 
 toc::[]
+:numbered:
 
 == Configure Git
 
