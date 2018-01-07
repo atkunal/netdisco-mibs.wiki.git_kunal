@@ -94,16 +94,16 @@ netdisco-mibs.
 
 [source,shell,indent=0]
 ----
-EXTRAS/scripts/prepmibs /tmp/vendorname // <1>
+EXTRAS/scripts/prepmibs /tmp/vendorname 1️⃣
 ----
-<1> the directory where you unzipped your new MIB bundle, with of course the
+1️⃣ the directory where you unzipped your new MIB bundle, with of course the
 same vendor name as used in netdisco-mibs
 
 TIP: The script will rename and organise files to help you.
 
-TIP: Items marked "✘" need manually inspecting and will be in the "error" folder.
+TIP: Items marked ✘ need manually inspecting and will be in the "error" folder.
 
-TIP: Items marked "⚠" will be put in the "ignore" folder and skipped.
+TIP: Items marked ⚠ will be put in the "ignore" folder and skipped.
 
 TIP: MIBs belonging to other vendors will be moved to the "other" folder.
 
