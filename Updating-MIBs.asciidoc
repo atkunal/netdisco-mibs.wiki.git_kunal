@@ -24,17 +24,15 @@ repository access.
 
 [source,shell,indent=0]
 ----
-git config --global core.autocrlf input 1️⃣
-git config --global push.default current 2️⃣
-git config --global core.whitespace cr-at-eol 3️⃣
-git clone https://github.com/netdisco/netdisco-mibs.git 4️⃣
+git config --global core.autocrlf input ①
+git config --global push.default current ②
+git config --global core.whitespace cr-at-eol ③
+git clone https://github.com/netdisco/netdisco-mibs.git ④
 ----
-1️⃣ fix MIB line endings +
-2️⃣ push and track new branches
-
-3️⃣ make git-diff ignore windows line endings
-
-4️⃣ replace Netdisco's netdisco-mibs if you wish
+① fix MIB line endings +
+② push and track new branches +
+③ make git-diff ignore windows line endings +
+④ replace Netdisco's netdisco-mibs if you wish
 
 Obviously, the git clone link should be your own fork, if that is what you
 have chosen.
@@ -61,18 +59,18 @@ master branch).
 
 [source,shell,indent=0]
 ----
-git checkout -b initials-vendorname-description 1️⃣
+git checkout -b initials-vendorname-description ①
 ----
-1️⃣ your initials, the vendor, a description
+① your initials, the vendor, a description
 
 == Enter the netdisco-mibs workspace
 
 [source,shell,indent=0]
 ----
 cd $MIBHOME
-mkdir vendorname 1️⃣
+mkdir vendorname ①
 ----
-1️⃣ only if the vendor is new
+① only if the vendor is new
 
 == Bootstrap a net-snmp commandline toolset
 
@@ -96,9 +94,9 @@ netdisco-mibs.
 
 [source,shell,indent=0]
 ----
-EXTRAS/scripts/prepmibs /tmp/vendorname 1️⃣
+EXTRAS/scripts/prepmibs /tmp/vendorname ①
 ----
-1️⃣ the directory where you unzipped your new MIB bundle, with of course the
+① the directory where you unzipped your new MIB bundle, with of course the
 same vendor name as used in netdisco-mibs
 
 TIP: The script will rename and organise files to help you.
@@ -158,9 +156,9 @@ have introduced or changed. Use `git diff` to review these changes:
 [source,shell,indent=0]
 ----
 git diff EXTRAS/reports/vendorname
-git diff EXTRAS/reports/all 1️⃣
+git diff EXTRAS/reports/all ①
 ----
-1️⃣ should look the same as the vendor diff
+① should look the same as the vendor diff
 
 CAUTION: Sanity check that new entries are what you were expecting.
 
