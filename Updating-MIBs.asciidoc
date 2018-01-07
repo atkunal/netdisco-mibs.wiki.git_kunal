@@ -24,15 +24,15 @@ repository access.
 
 [source,shell,indent=0]
 ----
-git config --global core.autocrlf input // <1>
-git config --global push.default current // <2>
-git config --global core.whitespace cr-at-eol // <3>
-git clone https://github.com/netdisco/netdisco-mibs.git // <4>
+git config --global core.autocrlf input 1️⃣
+git config --global push.default current 2️⃣
+git config --global core.whitespace cr-at-eol 3️⃣
+git clone https://github.com/netdisco/netdisco-mibs.git 4️⃣
 ----
-<1> fix MIB line endings
-<2> push and track new branches
-<3> make git-diff ignore windows line endings
-<4> replace Netdisco's netdisco-mibs if you wish
+1️⃣ fix MIB line endings
+2️⃣ push and track new branches
+3️⃣ make git-diff ignore windows line endings
+4️⃣ replace Netdisco's netdisco-mibs if you wish
 
 Obviously, the git clone link should be your own fork, if that is what you
 have chosen.
@@ -59,18 +59,18 @@ master branch).
 
 [source,shell,indent=0]
 ----
-git checkout -b initials-vendorname-description // <1>
+git checkout -b initials-vendorname-description 1️⃣
 ----
-<1> your initials, the vendor, a description
+1️⃣ your initials, the vendor, a description
 
 == Enter the netdisco-mibs workspace
 
 [source,shell,indent=0]
 ----
 cd $MIBHOME
-mkdir vendorname // <1>
+mkdir vendorname // 1️⃣
 ----
-<1> only if the vendor is new
+1️⃣ only if the vendor is new
 
 == Bootstrap a net-snmp commandline toolset
 
@@ -156,9 +156,9 @@ have introduced or changed. Use `git diff` to review these changes:
 [source,shell,indent=0]
 ----
 git diff EXTRAS/reports/vendorname
-git diff EXTRAS/reports/all # <1>
+git diff EXTRAS/reports/all 1️⃣
 ----
-<1> should look the same as the vendor diff
+1️⃣ should look the same as the vendor diff
 
 CAUTION: Sanity check that new entries are what you were expecting.
 
