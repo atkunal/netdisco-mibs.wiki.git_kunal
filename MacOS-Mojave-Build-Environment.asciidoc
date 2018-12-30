@@ -5,7 +5,7 @@
 or visiting https://developer.apple.com/download/more/.
 
 1. Install Homebrew: https://brew.sh/
-1. Install net-snmp: `brew install net-snmp`
+1. Install net-snmp 5.8: `brew install net-snmp`
 1. Install PhantomJS: `brew cask install phantomjs`
 1. Install Perlbrew: https://perlbrew.pl/
 1. Build a Perl and set it as the new default for your user:
