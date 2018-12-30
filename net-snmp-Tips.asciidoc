@@ -22,53 +22,7 @@ Or even better, use `net-snmp-config`:
 
 # Interesting environment variables
 
-* SNMPCONFPATH
-* SNMP_PERSISTENT_DIR
-* MIBDIRS
-* MIB
-
-# MacOS Mojave Build Environment
-
-1. Install the XCode command line toolset, either by running:
-+
- xcode-select --install
-+
-or visiting https://developer.apple.com/download/more/.
-
-1. Install Homebrew: https://brew.sh/
-1. Install net-snmp: `brew install net-snmp`
-1. Install PhantomJS: `brew cask install phantomjs`
-1. Install Perlbrew: https://perlbrew.pl/
-1. Build a Perl and set it as the new default for your user:
-+
- perlbrew install perl-5.28.1
- perlbrew switch perl-5.28.1
- perlbrew install-cpanm
-
-1. Configure your environment:
-+
- cat >> ~/.profile
-+
- export ND_PHANTOMJS='/usr/local/bin/phantomjs'
-+
- # net-snmp 5.8 from homebrew
- PATH="/usr/local/opt/net-snmp/bin:$PATH"
- PATH="/usr/local/opt/net-snmp/sbin:$PATH"
- LDFLAGS="-L/usr/local/opt/net-snmp/lib"
- CPPFLAGS="-I/usr/local/opt/net-snmp/include"
-+
- # perl 5.28.1 instead of system perl
- source ~/perl5/perlbrew/etc/bashrc
-
-1. Start a new shell to get the above config in place
-1. We need the net-snmp 5.8 Perl binding, so download net-snmp:
-+
-https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz/download
-
-1. Untar and change to the `net-snmp/perl` directory then build and install:
-+
- perl Makefile.PL
- make
- make install
-
-That's it. You should not need `local::lib` with this setup as perlbrew runs one for perl-5.28.1 for you automagically.
+* `SNMPCONFPATH`
+* `SNMP_PERSISTENT_DIR`
+* `MIBDIRS`
+* `MIB`
