@@ -43,6 +43,7 @@ or visiting https://developer.apple.com/download/more/.
 +
  perlbrew install perl-5.28.1
  perlbrew switch perl-5.28.1
+ perlbrew install-cpanm
 
 1. Configure your environment:
 +
@@ -58,5 +59,16 @@ or visiting https://developer.apple.com/download/more/.
 +
  # perl 5.28.1 instead of system perl
  source ~/perl5/perlbrew/etc/bashrc
+
+1. Start a new shell to get the above config in place
+1. We need the net-snmp 5.8 Perl binding, so download net-snmp:
++
+https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz/download
+
+1. Untar and change to the `net-snmp/perl` directory then build and install:
++
+ perl Makefile.PL
+ make
+ make install
 
 That's it. You should not need `local::lib` with this setup as perlbrew runs one for perl-5.28.1 for you automagically.
