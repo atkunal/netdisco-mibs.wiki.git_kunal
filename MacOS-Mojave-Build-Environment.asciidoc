@@ -44,4 +44,4 @@ That's it.
 
 You should not need `local::lib` with this setup as perlbrew runs one for perl-5.28.1 for you automagically.
 
-For Netdisco and SNMP::Info developers, you can go ahead and run "`cpanm --installdeps .`" in the git repositories. Note that this will install `SNMP::Info` which you may then wish to remove.
+For Netdisco and SNMP::Info developers, you can go ahead and run `cpanm --installdeps .` in the git repositories. Note that this will install `SNMP::Info` which you may then wish to remove.
