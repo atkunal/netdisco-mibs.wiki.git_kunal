@@ -1,4 +1,4 @@
-# Configuration paths in the build
+# View configuration paths used in the build
 
 `snmpd -f -Lo -Dread_config -H 2>&1 | grep "config path" | head -1`
 
@@ -17,7 +17,8 @@ Or even better, use `net-snmp-config`:
     --persistent-directory display default persistent directory
     --perlprog            display path to perl for the perl modules
 
-# Interesting environment variables
+
+# Interesting environment variables
 
 * SNMPCONFPATH
 * SNMP_PERSISTENT_DIR
