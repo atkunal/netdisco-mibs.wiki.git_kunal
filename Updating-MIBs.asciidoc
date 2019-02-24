@@ -74,8 +74,14 @@ mkdir vendorname ①
 
 == Bootstrap a net-snmp commandline toolset
 
-Run this *every* time. It will only be slow once, when first building the
-apps.
+You need a `net-snmp` supporting 16k Textual Conventions. Run the following
+command to see if you have net-snmp 5.8 (required) already:
+
+[source,shell,indent=0]
+snmpstatus --version
+
+If there is no snmpstatus or the version is less than 5.8, either
+https://github.com/netdisco/netdisco-mibs/wiki/MacOS-Mojave-Build-Environment[set up your MacOS environment using brew], or install net-snmp locally using the following command:
 
 [source,shell,indent=0]
 EXTRAS/scripts/setmaxtc
