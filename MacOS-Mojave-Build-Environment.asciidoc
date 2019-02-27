@@ -36,7 +36,7 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
 
 1. Untar and change to the `net-snmp/perl` directory then build and install:
 +
- perl Makefile.PL
+ perl -I. Makefile.PL
  make
  make install
 
