@@ -48,6 +48,8 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
  alias g='git'
  alias ll='ls -lhG'
 
+1. Install PostgreSQL: https://postgresapp.com/
+
 That's it.
 
 You should not need `local::lib` with this setup as perlbrew runs one for perl-5.28.1 for you automagically.
