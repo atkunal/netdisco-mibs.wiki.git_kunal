@@ -8,12 +8,6 @@ or visiting https://developer.apple.com/download/more/.
 1. Install net-snmp 5.8: `brew install net-snmp`
 1. Install PhantomJS: `brew cask install phantomjs`
 1. Install Perlbrew: https://perlbrew.pl/
-1. Build a Perl and set it as the new default for your user:
-+
- perlbrew install perl-5.28.1
- perlbrew switch perl-5.28.1
- perlbrew install-cpanm
-
 1. Configure your environment:
 +
  cat >> ~/.profile
@@ -29,6 +23,12 @@ or visiting https://developer.apple.com/download/more/.
  # perl 5.28.1 instead of system perl
  source ~/perl5/perlbrew/etc/bashrc
 
+1. Build a Perl and set it as the new default for your user:
++
+ perlbrew install perl-5.28.1
+ perlbrew switch perl-5.28.1
+ perlbrew install-cpanm
+
 1. Start a new shell to get the above config in place
 1. We need the net-snmp 5.8 Perl binding, so download net-snmp:
 +
@@ -39,6 +39,13 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
  perl -I. Makefile.PL
  make
  make install
+1. Add other useful things to the environment:
++
+ cat >> ~/.profile
++
+ export PERL_CPANM_OPT='--notest --curl --quiet'
+ alias g='git'
+ alias ll='ls -lhG'
 
 That's it.
 
