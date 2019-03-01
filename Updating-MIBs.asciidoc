@@ -40,7 +40,16 @@ have chosen.
 == Extract your MIBs
 
 Unzip the bundle to `/tmp/vendorname`, where "```vendorname```" is the same as
-the vendor in netdisco-mibs (or a new one).
+the vendor in netdisco-mibs (or a new one). If you are not sure about the
+official name for a vendor you can check the MIB where their enterprise oid is
+in defined, which looks like this:
+
+----
+redlionram     OBJECT IDENTIFIER ::= {enterprises 1890}
+----
+
+Here the name to use for the vendor would be `redlionram`.
+
 
 == Set MIBHOME
 
