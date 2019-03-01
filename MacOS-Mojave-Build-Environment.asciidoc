@@ -46,6 +46,7 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
 +
  export PERL_CPANM_OPT='--notest --curl --quiet'
  alias g='git'
+ alias gs='git status'
  alias ll='ls -lhG'
 
 1. Install PostgreSQL: https://postgresapp.com/
