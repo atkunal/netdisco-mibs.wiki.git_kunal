@@ -39,6 +39,7 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
  perl -I. Makefile.PL
  make
  make install
+
 1. Add other useful things to the environment:
 +
  cat >> ~/.profile
