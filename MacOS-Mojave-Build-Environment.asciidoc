@@ -55,6 +55,7 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
  [core]
     autocrlf = input
     whitespace = cr-at-eol
+    commentChar = @
  [push]
     default = current
     followTags = true
