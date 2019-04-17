@@ -13,6 +13,7 @@ or visiting https://developer.apple.com/download/more/.
  cat >> ~/.profile
 +
  export ND_PHANTOMJS='/usr/local/bin/phantomjs'
+ export POSTGRES_HOME="/Applications/Postgres.app/Contents/Versions/latest"
 +
  # net-snmp 5.8 from homebrew
  PATH="/usr/local/opt/net-snmp/bin:$PATH"
