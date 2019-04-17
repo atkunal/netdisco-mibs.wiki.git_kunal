@@ -88,3 +88,7 @@ That's it.
 You should not need `local::lib` with this setup as perlbrew runs one for perl-5.28.1 for you automagically.
 
 For Netdisco and SNMP::Info developers, you can go ahead and run `cpanm --installdeps .` in the git repositories. Note that this will install `SNMP::Info` which you may then wish to remove.
+
+See also:
+
+* http://osxdaily.com/2018/01/07/use-sf-mono-font-mac/
