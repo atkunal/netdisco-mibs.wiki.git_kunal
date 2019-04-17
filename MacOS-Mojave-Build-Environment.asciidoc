@@ -73,7 +73,9 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
  [alias]
     pr = "!sh -c \"git checkout -b pr/$1 && curl -sL $(git config --get remote.origin.url | sed -e 's|:|/|' -e 's|^git@|https://|' -e 's|\\.git$|/pull/$1.patch|') | git am --whitespace=nowarn\" -"
     pr-clean = "!git checkout - ; git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-
+[user]
+   name = Boaty McBoatFace
+   email = boaty@example.com
 
 That's it.
 
