@@ -26,10 +26,12 @@ or visiting https://developer.apple.com/download/more/.
 1. Build a Perl and set it as the new default for your user:
 +
  ~/perl5/perlbrew/bin/perlbrew install perl-5.28.1
+
+1. Start a new shell to get the above config in place, then:
++
  perlbrew switch perl-5.28.1
  perlbrew install-cpanm
 
-1. Start a new shell to get the above config in place
 1. We need the net-snmp 5.8 Perl binding, so download net-snmp:
 +
 https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz/download
