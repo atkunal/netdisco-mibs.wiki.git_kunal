@@ -56,7 +56,7 @@ https://sourceforge.net/projects/net-snmp/files/net-snmp/5.8/net-snmp-5.8.tar.gz
  cat > ~/Library/KeyBindings/DefaultKeyBinding.dict
 
  {
-    /* this will make all &#167; turn into # */
+    /* this will make all &#167; (i.e. section sign: §) turn into # */
     "\UA7" = ("insertText:", "#");
  }
 
