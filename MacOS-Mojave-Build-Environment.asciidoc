@@ -5,7 +5,7 @@
 or visiting https://developer.apple.com/download/more/.
 
 1. Install Homebrew: https://brew.sh/
-1. Install net-snmp 5.8: `brew install net-snmp`
+1. Install net-snmp 5.8: `brew install net-snmp gnu-sed`
 1. Install PhantomJS: `brew cask install phantomjs`
 1. Install Perlbrew: https://perlbrew.pl/
 1. Enable snmp locally if you wish: https://support.solarwinds.com/SuccessCenter/s/article/Configure-SNMP-service-on-Mac-OSX-Sierra
@@ -21,6 +21,9 @@ or visiting https://developer.apple.com/download/more/.
  PATH="/usr/local/opt/net-snmp/sbin:$PATH"
  LDFLAGS="-L/usr/local/opt/net-snmp/lib"
  CPPFLAGS="-I/usr/local/opt/net-snmp/include"
++
+ # gnu-sed and other tools
+ PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 +
  # perl 5.28.1 instead of system perl
  source ~/perl5/perlbrew/etc/bashrc
