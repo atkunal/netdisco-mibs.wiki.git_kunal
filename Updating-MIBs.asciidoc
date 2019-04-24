@@ -173,7 +173,7 @@ have introduced or changed. Use `git diff` to review these changes:
 git diff EXTRAS/reports/vendorname
 git diff EXTRAS/reports/all ①
 ----
-① should look the same as the vendor diff
+① should look the same as the "vendorname" diff
 
 CAUTION: Sanity check that new entries are what you were expecting.
 
